@@ -58,11 +58,17 @@ namespace Tugas_week_14
                     perbedaan = value1 - value2;
                     for (int y =0; y< textBoxKalimat.Text.Length; y++)
                     {
-                        Kalimat[y] = Kalimat[y] - perbedaan;
-                        if (Kalimat[y] < 97)
+                        if (Kalimat[y] == 32)
                         {
-                            Kalimat[y] = Kalimat[y] + 26;
-                        }
+                        }                 
+                        else
+                        {
+                            Kalimat[y] = Kalimat[y] - perbedaan;
+                            if (Kalimat[y] < 97)
+                            {
+                                Kalimat[y] = Kalimat[y] + 26;
+                            }
+                        }                     
                         char kalimat2 = (char)Kalimat[y];
                         if (kalimathasil == "")
                         {
@@ -80,10 +86,16 @@ namespace Tugas_week_14
                     perbedaan = value2 - value1;
                     for (int y = 0; y < textBoxKalimat.Text.Length; y++)
                     {
-                        Kalimat[y] = Kalimat[y] + perbedaan;
-                        if (Kalimat[y] > 122)
+                        if (Kalimat[y] == 32)
                         {
-                            Kalimat[y] = Kalimat[y] - 26;
+                        }
+                        else
+                        {
+                            Kalimat[y] = Kalimat[y] + perbedaan;
+                            if (Kalimat[y] > 122)
+                            {
+                                Kalimat[y] = Kalimat[y] - 26;
+                            }
                         }
                         char kalimat2 = (char)Kalimat[y];
                         if (kalimathasil == "")
@@ -98,6 +110,7 @@ namespace Tugas_week_14
                     labelFinal.Text = kalimathasil;
                 }
             }
+            
         }
     }
 }
